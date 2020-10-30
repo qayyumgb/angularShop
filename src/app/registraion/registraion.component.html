@@ -1,0 +1,16 @@
+<div class="allProducts">
+  <h1 class="shopsHeading">Qayyum shop</h1>
+  <ul class="productItems">
+    <li *ngFor="let products of registration"
+    [class.selected] ="products === selectedProduct"
+    (click)="onSelect(products)">
+    <span class="badge">{{products.id}}</span>
+    {{products.name}}
+    </li>
+  </ul>
+  <div *ngIf="selectedProduct">
+    <div><span>ID</span>{{selectedProduct.id}}</div>
+    <div><label>Name: </label>
+    <input [(ngModel)]="selectedProduct.name" placeholder="name" /></div>
+  </div>
+</div>
